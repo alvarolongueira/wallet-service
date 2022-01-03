@@ -1,4 +1,10 @@
 !.mvn/wrapper/maven-wrapper.jar
+/target/
+/.classpath
+/.project
+/.apt_generated/
+/.factorypath
+/.idea/
 
 ### STS ###
 .apt_generated
