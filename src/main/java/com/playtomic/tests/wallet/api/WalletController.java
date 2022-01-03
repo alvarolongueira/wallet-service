@@ -6,11 +6,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class WalletController {
-    private Logger log = LoggerFactory.getLogger(WalletController.class);
+class WalletController {
+    private final Logger log = LoggerFactory.getLogger(WalletController.class);
 
     @RequestMapping("/")
     void log() {
-        log.info("Logging from /");
+        this.log.info("Logging from /");
     }
+
+
+
+//    - Puedes consultar el saldo.
+//            - Puedes cargar dinero. En este caso haciendo un cobro una pasarela pasarela de pagos de terceros (stripe, paypal, redsys).
+//            - Puedes gastar el saldo en compras en nuestra plataforma.
+//- Puedes devolver esas compras y recuperar el saldo.
+//            - Puedes consultar el histórico de gastos y devoluciones.
 }
