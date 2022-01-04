@@ -3,7 +3,6 @@ package com.playtomic.tests.wallet.provider;
 import java.math.BigDecimal;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import com.playtomic.tests.wallet.domain.ThirdParty;
@@ -20,23 +19,23 @@ public class ThirdPartyProviderAction implements ThirdPartyProvider {
         this.stripeService = stripeService;
     }
 
-    @Bean
     @Override
     public void charge(ThirdParty thirdParty, String creditCardNumber, BigDecimal amount) {
         switch (thirdParty) {
             case STRIPE:
                 this.stripeService.charge(creditCardNumber, amount);
+                break;
             default:
                 throw new UnsupportedOperationException("Third party unsupported " + thirdParty);
         }
     }
 
-    @Bean
     @Override
     public void refund(ThirdParty thirdParty, String paymentId) {
         switch (thirdParty) {
             case STRIPE:
                 this.stripeService.refund(paymentId);
+                break;
             default:
                 throw new UnsupportedOperationException("Third party unsupported " + thirdParty);
         }

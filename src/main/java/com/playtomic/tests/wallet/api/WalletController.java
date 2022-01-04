@@ -73,21 +73,21 @@ class WalletController {
         return ResponseBody.of(response);
     }
 
-    @PostMapping(path = "/load}")
+    @PostMapping(path = "/load")
     public ResponseEntity<WalletResponse> loadWallet(@RequestBody LoadWalletRequest request) {
         Wallet wallet = this.loadWalletService.load(request);
         WalletResponse response = WalletResponse.convertToResponse(wallet);
         return ResponseBody.of(response);
     }
 
-    @PostMapping(path = "/spend}")
+    @PostMapping(path = "/spend")
     public ResponseEntity<WalletResponse> spendWallet(@RequestBody SpendWalletRequest request) {
         Wallet wallet = this.spendWalletService.spend(request);
         WalletResponse response = WalletResponse.convertToResponse(wallet);
         return ResponseBody.of(response);
     }
 
-    @PostMapping(path = "/giveback}")
+    @PostMapping(path = "/giveback")
     public ResponseEntity<WalletResponse> giveBackTransfer(@RequestBody GiveBackWalletRequest request) {
         Wallet wallet = this.giveBackTransferService.giveBack(request);
         WalletResponse response = WalletResponse.convertToResponse(wallet);

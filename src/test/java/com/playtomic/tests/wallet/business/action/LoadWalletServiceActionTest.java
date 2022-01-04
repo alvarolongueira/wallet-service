@@ -39,12 +39,12 @@ public class LoadWalletServiceActionTest {
     private LoadWalletService service;
     private LoadWalletRequest request;
 
-    private final Currency currency = Currency.getInstance(Locale.getDefault());
+    private final Currency CURRENCY = Currency.getInstance(Locale.getDefault());
 
     @Before
     public void init() {
         this.service = new LoadWalletServiceAction(this.walletManager, this.transferManager, this.currencyProvider, this.thirdPartyProvider);
-        this.request = new LoadWalletRequest(1, BigDecimal.TEN, this.currency);
+        this.request = new LoadWalletRequest(1, BigDecimal.TEN, this.CURRENCY);
 
         Mockito
                 .when(this.currencyProvider.change(Mockito.any(), Mockito.any(), Mockito.any()))
@@ -79,14 +79,14 @@ public class LoadWalletServiceActionTest {
 
     @Test(expected = NegativeAmountException.class)
     public void error_negative_amount() {
-        this.service.load(new LoadWalletRequest(1, BigDecimal.valueOf(-15), this.currency));
+        this.service.load(new LoadWalletRequest(1, BigDecimal.valueOf(-15), this.CURRENCY));
     }
 
     @Test(expected = CurrencyNotFoundException.class)
     public void error_currency_not_found() {
         Mockito
                 .when(this.currencyProvider.change(Mockito.any(), Mockito.any(), Mockito.any()))
-                .thenThrow(new CurrencyNotFoundException(this.currency));
+                .thenThrow(new CurrencyNotFoundException(this.CURRENCY));
 
         this.service.load(this.request);
     }

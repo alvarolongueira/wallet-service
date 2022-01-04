@@ -5,9 +5,11 @@ import java.math.BigDecimal;
 import com.playtomic.tests.wallet.domain.Wallet;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class WalletResponse {
 
     private long id;

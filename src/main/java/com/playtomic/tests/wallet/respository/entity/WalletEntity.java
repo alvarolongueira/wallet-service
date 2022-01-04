@@ -11,6 +11,7 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.With;
 
 @Entity
 @Table(name = "WALLET")
@@ -23,6 +24,7 @@ public class WalletEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private BigDecimal amount;
+    @With
+    private BigDecimal amount = BigDecimal.ZERO;
 
 }

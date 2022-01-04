@@ -32,8 +32,8 @@ public class StripeService {
     @NonNull
     private final RestTemplate restTemplate;
 
-    public StripeService(@Value("stripe.simulator.charges-uri") @NonNull URI chargesUri,
-                         @Value("stripe.simulator.refunds-uri") @NonNull URI refundsUri,
+    public StripeService(@Value("${stripe.simulator.charges-uri}") @NonNull URI chargesUri,
+                         @Value("${stripe.simulator.refunds-uri}") @NonNull URI refundsUri,
                          @NotNull RestTemplateBuilder restTemplateBuilder) {
         this.chargesUri = chargesUri;
         this.refundsUri = refundsUri;
@@ -41,6 +41,8 @@ public class StripeService {
                 restTemplateBuilder
                 .errorHandler(new StripeRestTemplateResponseErrorHandler())
                 .build();
+
+
     }
 
     /**

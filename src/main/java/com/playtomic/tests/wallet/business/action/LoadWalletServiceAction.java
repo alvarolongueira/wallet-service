@@ -61,7 +61,7 @@ public class LoadWalletServiceAction implements LoadWalletService {
 
     private void chargeToThirdParty(BigDecimal amount) {
         //TODO there is to define how to recover sensitive info
-        this.thirdPartyProvider.charge(ThirdParty.STRIPE, "", amount);
+        this.thirdPartyProvider.charge(ThirdParty.STRIPE, "1111 2222 3333 4444", amount);
     }
 
     private BigDecimal convert(BigDecimal amount) {
