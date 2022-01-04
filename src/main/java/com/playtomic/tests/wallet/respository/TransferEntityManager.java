@@ -1,5 +1,6 @@
 package com.playtomic.tests.wallet.respository;
 
+import java.math.BigDecimal;
 import java.util.Set;
 
 import org.springframework.stereotype.Service;
@@ -28,7 +29,7 @@ public class TransferEntityManager {
     }
 
     @Transactional
-    public void insert(long walletId, long amount) {
+    public void insert(long walletId, BigDecimal amount) {
         //TODO
     }
 

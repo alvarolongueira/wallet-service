@@ -4,10 +4,12 @@ import java.math.BigDecimal;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
 
 import com.playtomic.tests.wallet.domain.ThirdParty;
 import com.playtomic.tests.wallet.service.StripeService;
 
+@Service
 public class ThirdPartyProviderAction implements ThirdPartyProvider {
 
     @Autowired

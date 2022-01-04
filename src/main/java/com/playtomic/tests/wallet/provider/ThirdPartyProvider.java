@@ -6,8 +6,8 @@ import com.playtomic.tests.wallet.domain.ThirdParty;
 
 public interface ThirdPartyProvider {
 
-    public void charge(ThirdParty thirdParty, String creditCardNumber, BigDecimal amount);
+    void charge(ThirdParty thirdParty, String creditCardNumber, BigDecimal amount);
 
-    public void refund(ThirdParty thirdParty, String paymentId);
+    void refund(ThirdParty thirdParty, String paymentId);
 
 }

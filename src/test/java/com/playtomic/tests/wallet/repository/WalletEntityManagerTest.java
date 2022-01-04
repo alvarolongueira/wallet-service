@@ -1,5 +1,6 @@
 package com.playtomic.tests.wallet.repository;
 
+import java.math.BigDecimal;
 import java.util.Optional;
 
 import org.junit.Assert;
@@ -31,8 +32,8 @@ public class WalletEntityManagerTest {
 
     @Test
     public void success() {
-        WalletEntity entity = new WalletEntity(1, 10);
-        Wallet expected = new Wallet(1, 10);
+        WalletEntity entity = new WalletEntity(1, BigDecimal.TEN);
+        Wallet expected = new Wallet(1, BigDecimal.TEN);
         Mockito.when(this.repository.findById(Mockito.anyLong())).thenReturn(Optional.of(entity));
 
         Wallet result = this.manager.find(1);
@@ -45,5 +46,7 @@ public class WalletEntityManagerTest {
     public void not_found() {
         this.manager.find(1);
     }
+
+    //TODO test more things
 
 }

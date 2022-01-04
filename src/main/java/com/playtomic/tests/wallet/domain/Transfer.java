@@ -1,5 +1,7 @@
 package com.playtomic.tests.wallet.domain;
 
+import java.math.BigDecimal;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,7 +14,7 @@ public class Transfer {
 
     private long walletId;
 
-    private long amount;
+    private BigDecimal amount;
 
     @Builder.Default
     private boolean returned = false;

@@ -1,5 +1,7 @@
 package com.playtomic.tests.wallet.respository.entity;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,7 +25,7 @@ public class TransferEntity {
 
     private long walletId;
 
-    private long amount;
+    private BigDecimal amount;
 
     private boolean returned;
 
