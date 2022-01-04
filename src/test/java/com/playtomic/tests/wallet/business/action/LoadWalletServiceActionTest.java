@@ -20,6 +20,7 @@ import com.playtomic.tests.wallet.exception.domain.NegativeAmountException;
 import com.playtomic.tests.wallet.exception.domain.ThirdPartyNotAvailable;
 import com.playtomic.tests.wallet.exception.domain.WalletNotFoundException;
 import com.playtomic.tests.wallet.provider.CurrencyProvider;
+import com.playtomic.tests.wallet.provider.ProviderManager;
 import com.playtomic.tests.wallet.provider.ThirdPartyProvider;
 import com.playtomic.tests.wallet.respository.TransferEntityManager;
 import com.playtomic.tests.wallet.respository.WalletEntityManager;
@@ -27,6 +28,8 @@ import com.playtomic.tests.wallet.respository.WalletEntityManager;
 @RunWith(MockitoJUnitRunner.class)
 public class LoadWalletServiceActionTest {
 
+    @Mock
+    private ProviderManager providerManager;
     @Mock
     private WalletEntityManager walletManager;
     @Mock
@@ -43,14 +46,25 @@ public class LoadWalletServiceActionTest {
 
     @Before
     public void init() {
-        this.service = new LoadWalletServiceAction(this.walletManager, this.transferManager, this.currencyProvider, this.thirdPartyProvider);
+        this.service = new LoadWalletServiceAction(this.providerManager);
         this.request = new LoadWalletRequest(1, BigDecimal.TEN, this.CURRENCY);
+        Wallet founded = new Wallet(1, BigDecimal.TEN);
 
+        Mockito
+                .when(this.providerManager.getCurrencyProvider())
+                .thenReturn(this.currencyProvider);
+        Mockito
+                .when(this.providerManager.getThirdPartyProvider())
+                .thenReturn(this.thirdPartyProvider);
+        Mockito
+                .when(this.providerManager.getWalletEntityManager())
+                .thenReturn(this.walletManager);
+        Mockito
+                .when(this.providerManager.getTransferEntityManager())
+                .thenReturn(this.transferManager);
         Mockito
                 .when(this.currencyProvider.change(Mockito.any(), Mockito.any(), Mockito.any()))
                 .thenReturn(BigDecimal.TEN);
-
-        Wallet founded = new Wallet(1, BigDecimal.TEN);
         Mockito
                 .when(this.walletManager.find(Mockito.anyLong()))
                 .thenReturn(founded);

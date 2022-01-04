@@ -1,4 +1,4 @@
-package com.playtomic.tests.wallet.provider;
+package com.playtomic.tests.wallet.provider.action;
 
 import java.math.BigDecimal;
 
@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.playtomic.tests.wallet.domain.ThirdParty;
+import com.playtomic.tests.wallet.provider.ThirdPartyProvider;
 import com.playtomic.tests.wallet.service.StripeService;
 
 @Service
