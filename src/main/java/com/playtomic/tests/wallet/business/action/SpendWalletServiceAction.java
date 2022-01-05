@@ -11,7 +11,7 @@ public class SpendWalletServiceAction implements SpendWalletService {
 
     @Override
     public Wallet spend(SpendWalletRequest request) {
-        //TODO
+        //TODO implementation not required for this test
         return null;
     }
 }

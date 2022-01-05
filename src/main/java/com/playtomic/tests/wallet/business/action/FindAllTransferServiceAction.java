@@ -10,7 +10,7 @@ public class FindAllTransferServiceAction implements FindAllTransferService {
 
     @Override
     public Wallet find(long walletId) {
-        //TODO
+        //TODO implementation not required for this test
         return null;
     }
 

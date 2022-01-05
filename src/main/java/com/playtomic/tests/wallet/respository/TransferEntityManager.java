@@ -20,17 +20,19 @@ public class TransferEntityManager {
 
     @Transactional
     public Transfer findById(long transferId) {
-        return null;    //TODO
+        //TODO implementation not required for this test
+        return null;
     }
 
     @Transactional
     public Set<Transfer> findTransfers(long walletId) {
-        return null;    //TODO
+        //TODO implementation not required for this test
+        return null;
     }
 
     @Transactional
     public void insert(long walletId, BigDecimal amount) {
-        //TODO
+        //TODO implementation not required for this test
     }
 
 }
