@@ -1,47 +1,14 @@
 package com.playtomic.tests.wallet.respository;
 
-import java.math.BigDecimal;
-
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.playtomic.tests.wallet.domain.Wallet;
-import com.playtomic.tests.wallet.exception.domain.NegativeAmountException;
 import com.playtomic.tests.wallet.exception.domain.WalletNotFoundException;
-import com.playtomic.tests.wallet.respository.database.WalletRepository;
-import com.playtomic.tests.wallet.respository.entity.WalletEntity;
 
-@Service
-public class WalletEntityManager {
+public interface WalletEntityManager {
 
-    private final WalletRepository repository;
+    public Wallet find(long walletId) throws WalletNotFoundException;
 
-    public WalletEntityManager(WalletRepository repository) {
-        this.repository = repository;
-    }
+    public Wallet create();
 
-    @Transactional
-    public Wallet find(long walletId) throws WalletNotFoundException {
-        return this.repository.findById(walletId).map(this::convertToDomain).orElseThrow(() -> new WalletNotFoundException(walletId));
-    }
+    public void update(Wallet wallet);
 
-    @Transactional
-    public Wallet create() {
-        WalletEntity entity = this.repository.save(new WalletEntity().withAmount(BigDecimal.ZERO));
-        return this.convertToDomain(entity);
-    }
-
-    @Transactional
-    public void update(Wallet wallet) {
-        if (BigDecimal.ZERO.compareTo(wallet.getAmount()) > 0) {
-            throw new NegativeAmountException(wallet.getAmount());
-        }
-        WalletEntity entity = this.repository.findById(wallet.getId()).orElseThrow(() -> new WalletNotFoundException(wallet.getId()));
-        entity = entity.withAmount(wallet.getAmount());
-        this.repository.save(entity);
-    }
-
-    private Wallet convertToDomain(WalletEntity entity) {
-        return new Wallet(entity.getId(), entity.getAmount());
-    }
 }

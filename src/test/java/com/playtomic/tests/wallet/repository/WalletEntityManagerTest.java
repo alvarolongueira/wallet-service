@@ -14,6 +14,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 import com.playtomic.tests.wallet.domain.Wallet;
 import com.playtomic.tests.wallet.exception.domain.WalletNotFoundException;
 import com.playtomic.tests.wallet.respository.WalletEntityManager;
+import com.playtomic.tests.wallet.respository.database.WalletEntityManagerImpl;
 import com.playtomic.tests.wallet.respository.database.WalletRepository;
 import com.playtomic.tests.wallet.respository.entity.WalletEntity;
 
@@ -27,7 +28,7 @@ public class WalletEntityManagerTest {
 
     @Before
     public void init() {
-        this.manager = new WalletEntityManager(this.repository);
+        this.manager = new WalletEntityManagerImpl(this.repository);
     }
 
     @Test
