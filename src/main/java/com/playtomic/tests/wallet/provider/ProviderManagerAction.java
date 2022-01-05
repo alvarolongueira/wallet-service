@@ -1,8 +1,11 @@
 package com.playtomic.tests.wallet.provider;
 
+import org.springframework.stereotype.Component;
+
 import com.playtomic.tests.wallet.respository.TransferEntityManager;
 import com.playtomic.tests.wallet.respository.WalletEntityManager;
 
+@Component
 public class ProviderManagerAction implements ProviderManager {
 
     private final WalletEntityManager walletManager;
