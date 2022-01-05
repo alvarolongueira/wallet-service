@@ -12,9 +12,9 @@ import com.playtomic.tests.wallet.respository.TransferEntityManager;
 @Service
 public class TransferEntityManagerImpl implements TransferEntityManager {
 
-    private final TransferRepository repository;
+    private final TransferEntityRepository repository;
 
-    public TransferEntityManagerImpl(TransferRepository repository) {
+    public TransferEntityManagerImpl(TransferEntityRepository repository) {
         this.repository = repository;
     }
 

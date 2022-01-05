@@ -4,7 +4,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.playtomic.tests.wallet.respository.entity.TransferEntity;
 
-public interface TransferRepository extends CrudRepository<TransferEntity, Long> {
+interface TransferEntityRepository extends CrudRepository<TransferEntity, Long> {
 
 
 }

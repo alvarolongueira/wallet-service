@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.playtomic.tests.wallet.respository.entity.WalletEntity;
 
-public interface WalletRepository extends CrudRepository<WalletEntity, Long> {
+public interface WalletEntityRepository extends CrudRepository<WalletEntity, Long> {
 
 }

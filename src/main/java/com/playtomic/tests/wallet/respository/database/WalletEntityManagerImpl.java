@@ -14,9 +14,9 @@ import com.playtomic.tests.wallet.respository.entity.WalletEntity;
 @Service
 public class WalletEntityManagerImpl implements WalletEntityManager {
 
-    private final WalletRepository repository;
+    private final WalletEntityRepository repository;
 
-    public WalletEntityManagerImpl(WalletRepository repository) {
+    public WalletEntityManagerImpl(WalletEntityRepository repository) {
         this.repository = repository;
     }
 
