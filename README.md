@@ -24,7 +24,7 @@ Because this is a trial, and how was requested, only these calls work:
 This is a basic structure, where each package has its own logic. We work with segregate interfaces
 
 * api: Controller to receive the requests. We have to subpackages to define the objects in/out the service
-* business: The main logic of the service
+* business: the main logic of the service
 * domain: main pojos in this service
 * exception: all defined errors and its handler
 * provider: external service or logic that is needed in this project
