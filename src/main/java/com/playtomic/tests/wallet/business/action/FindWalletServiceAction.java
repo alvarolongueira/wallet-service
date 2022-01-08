@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import com.playtomic.tests.wallet.business.FindWalletService;
 import com.playtomic.tests.wallet.domain.Wallet;
 import com.playtomic.tests.wallet.exception.domain.WalletNotFoundException;
-import com.playtomic.tests.wallet.respository.WalletEntityManager;
+import com.playtomic.tests.wallet.repository.WalletEntityManager;
 
 @Service
 public class FindWalletServiceAction implements FindWalletService {

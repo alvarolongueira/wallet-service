@@ -1,4 +1,4 @@
-package com.playtomic.tests.wallet.respository.database;
+package com.playtomic.tests.wallet.repository.database;
 
 import java.math.BigDecimal;
 import java.util.Set;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.playtomic.tests.wallet.domain.Transfer;
-import com.playtomic.tests.wallet.respository.TransferEntityManager;
+import com.playtomic.tests.wallet.repository.TransferEntityManager;
 
 @Service
 public class TransferEntityManagerImpl implements TransferEntityManager {

@@ -2,8 +2,8 @@ package com.playtomic.tests.wallet.provider;
 
 import org.springframework.stereotype.Component;
 
-import com.playtomic.tests.wallet.respository.TransferEntityManager;
-import com.playtomic.tests.wallet.respository.WalletEntityManager;
+import com.playtomic.tests.wallet.repository.TransferEntityManager;
+import com.playtomic.tests.wallet.repository.WalletEntityManager;
 
 @Component
 public class ProviderManagerAction implements ProviderManager {

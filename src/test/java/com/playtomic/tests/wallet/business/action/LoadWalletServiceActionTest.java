@@ -22,8 +22,8 @@ import com.playtomic.tests.wallet.exception.domain.WalletNotFoundException;
 import com.playtomic.tests.wallet.provider.CurrencyProvider;
 import com.playtomic.tests.wallet.provider.ProviderManager;
 import com.playtomic.tests.wallet.provider.ThirdPartyProvider;
-import com.playtomic.tests.wallet.respository.TransferEntityManager;
-import com.playtomic.tests.wallet.respository.WalletEntityManager;
+import com.playtomic.tests.wallet.repository.TransferEntityManager;
+import com.playtomic.tests.wallet.repository.WalletEntityManager;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LoadWalletServiceActionTest {

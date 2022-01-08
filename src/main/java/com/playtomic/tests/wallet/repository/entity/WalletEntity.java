@@ -1,4 +1,4 @@
-package com.playtomic.tests.wallet.respository.entity;
+package com.playtomic.tests.wallet.repository.entity;
 
 import java.math.BigDecimal;
 
@@ -11,27 +11,20 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.With;
 
 @Entity
-@Table(name = "TRANSFER")
+@Table(name = "WALLET")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TransferEntity {
+public class WalletEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private long walletId;
-
-    private BigDecimal amount;
-
-    private boolean returned;
+    @With
+    private BigDecimal amount = BigDecimal.ZERO;
 
 }
-
-
-
-
-

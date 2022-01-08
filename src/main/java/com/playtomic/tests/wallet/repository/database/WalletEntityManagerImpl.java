@@ -1,4 +1,4 @@
-package com.playtomic.tests.wallet.respository.database;
+package com.playtomic.tests.wallet.repository.database;
 
 import java.math.BigDecimal;
 
@@ -8,8 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.playtomic.tests.wallet.domain.Wallet;
 import com.playtomic.tests.wallet.exception.domain.NegativeAmountException;
 import com.playtomic.tests.wallet.exception.domain.WalletNotFoundException;
-import com.playtomic.tests.wallet.respository.WalletEntityManager;
-import com.playtomic.tests.wallet.respository.entity.WalletEntity;
+import com.playtomic.tests.wallet.repository.WalletEntityManager;
+import com.playtomic.tests.wallet.repository.entity.WalletEntity;
 
 @Service
 public class WalletEntityManagerImpl implements WalletEntityManager {

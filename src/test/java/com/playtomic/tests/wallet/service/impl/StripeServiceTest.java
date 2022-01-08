@@ -16,11 +16,6 @@ import com.playtomic.tests.wallet.service.StripeAmountTooSmallException;
 import com.playtomic.tests.wallet.service.StripeService;
 import com.playtomic.tests.wallet.service.StripeServiceException;
 
-/**
- * This test is failing with the current implementation.
- * <p>
- * How would you test this?
- */
 @RunWith(MockitoJUnitRunner.class)
 public class StripeServiceTest {
 

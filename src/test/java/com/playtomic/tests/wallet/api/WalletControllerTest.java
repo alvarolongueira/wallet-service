@@ -17,10 +17,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.playtomic.tests.wallet.api.request.LoadWalletRequest;
 import com.playtomic.tests.wallet.api.response.WalletResponse;
 
-//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-
 @ActiveProfiles(profiles = "test")
 public class WalletControllerTest {
 

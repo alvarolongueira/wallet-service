@@ -1,29 +1,37 @@
-# Wallets Service
-In Playtomic, we have a service to manage our wallets. Our players can top-up their wallets using a credit card and spend that money on the platform (bookings, racket rentals, ...)
+# wallet-service
 
-This service has the following operations:
-- You can query your balance.
-- You can top-up your wallet. In this case, we charge the amount using a third-party payments platform (stripe, paypal, redsys).
-- You can spend your balance on purchases in Playtomic. 
-- You can return these purchases, and your money is refunded.
-- You can check your history of transactions.
+## Why
+We need to develop a microservice to manage the wallet of the customers.
+There are different actions that can be done, and in some cases, we need to validate with another third party services the transactions
 
-This exercise consists of building a proof of concept of this wallet service.
-You have to code endpoints for these operations:
-1. Get a wallet using its identifier.
-1. Top-up money in that wallet using a credit card number. It has to charge that amount internally using a third-party platform.
+## How
+* Run class WalletApplication: 
 
-The basic structure of a wallet is its identifier and its current balance. If you think you need extra fields, add them. We will discuss it in the interview. 
+This starts the application and expose some paths (defined in WalletController) to do any action relative to wallet
 
-So you can focus on these problems, you have here a maven project with a Spring Boot application. It already contains
-the basic dependencies and an H2 database. There are development and test profiles.
+Because this is a trial, and how was requested, only these calls work:
+* @GetMapping(path = "/get/{walletId}")
+* @PostMapping(path = "/create")
+* @PostMapping(path = "/load")
 
-You can also find an implementation of the service that would call to the real payments platform (StripePaymentService).
-This implementation is calling to a simulator deployed in one of our environments. Take into account
-that this simulator will return 422 http error codes under certain conditions.
+## Where
+* WalletControllerTest: Integration test which checks: create, find and load wallet
+* LoadWalletServiceActionTest: checks the business logic to load the wallet
+* WalletEntityManagerTest: checks actions on the repository, unfinished
+* StripeServiceTest: it was given, just fixed
 
-Consider that this service must work in a microservices environment in high availability. You should care about concurrency.
+## What
+This is a basic structure, where each package has its own logic. We work with segregate interfaces
 
-You can spend as much time as you need but we think that 4 hours is enough to show [the requirements of this job.](OFFER.md)
-You don't have to document your code, but you can write down anything you want to explain or anything you have skipped.
-You don't need to write tests for everything, but we would like to see different types of tests.
+* api: Controller to receive the requests. We have to subpackages to define the objects in/out the service
+* business: The main logic of the service
+* domain: main pojos in this service
+* exception: all defined errors and its handler
+* provider: external service or logic that is needed in this project
+* repository: logic to persist information. In this case, in a database. There is entity objects to separate from domain objects.
+
+
+## Who
+* **Alvaro Longueira** - [alvarolongueira](https://github.com/alvarolongueira)
+
+

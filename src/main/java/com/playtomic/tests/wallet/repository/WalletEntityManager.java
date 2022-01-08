@@ -1,4 +1,4 @@
-package com.playtomic.tests.wallet.respository;
+package com.playtomic.tests.wallet.repository;
 
 import com.playtomic.tests.wallet.domain.Wallet;
 import com.playtomic.tests.wallet.exception.domain.WalletNotFoundException;

@@ -1,7 +1,7 @@
 package com.playtomic.tests.wallet.provider;
 
-import com.playtomic.tests.wallet.respository.TransferEntityManager;
-import com.playtomic.tests.wallet.respository.WalletEntityManager;
+import com.playtomic.tests.wallet.repository.TransferEntityManager;
+import com.playtomic.tests.wallet.repository.WalletEntityManager;
 
 public interface ProviderManager {
 

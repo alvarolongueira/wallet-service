@@ -1,4 +1,4 @@
-package com.playtomic.tests.wallet.respository;
+package com.playtomic.tests.wallet.repository;
 
 import java.math.BigDecimal;
 import java.util.Set;
